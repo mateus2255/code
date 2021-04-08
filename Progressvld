@@ -1,0 +1,25 @@
+#!/bin/bash
+#Script Criado por Mateus Gomes
+#Banco
+
+#BKP-BRZ-PROD
+echo "Bancos xxx"
+echo "xxx"
+cd /diretorio/
+ls -lah |grep ".bkp" && echo "DATABASE BACKUP SIZE" && du -hs
+echo "DATABASE SIZE"
+cd /diretorio/ && du -hs
+echo "========================================================================"
+#BKP-xx1"
+echo "xx1"
+cd /diretorio/ss
+ls -lah |grep ".bkp" && echo "DATABASE BACKUP SIZE" && du -hs
+echo "DATABASE SIZE"
+cd /diretorio/xx1 && du -hs
+echo "========================================================================="
+echo "END"
+#Iniciando validação de bancos
+sh /diretorio/scripts/validabkp.sh
+tail -n 15000 /backup/logs/valid/bkpvalid.01 |grep "verificado com sucesso."
+echo "Validação Concluida!!"
+echo "======================================================================"
